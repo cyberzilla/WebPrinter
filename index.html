@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Printer Helper</title>
+    <link rel="stylesheet" href="assets/css/webprinter.css">
+    <link rel="stylesheet" href="assets/css/selectize.default.css">
+    <link rel="stylesheet" href="assets/css/jquery.toast.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/pretty-checkbox.min.css">
+</head>
+<body>
+
+<div class="tabcontainer">
+    <div class="tab">
+        <a class="tablinks active" tab-href="#tab1">About</a>
+        <a class="tablinks" tab-href="#tab2">Preferences</a>
+    </div>
+
+    <div id="tab1" class="tabcontent active animated fadeIn">
+        <div class="aboutContainer">
+            <br>
+            <br>
+            <img src="assets/icons/icon-128.png" alt="icon">
+            <h3 style="font-size: 18px;color: #994136;">WebPrinter 1.0</h3>
+            <p style="font-size: 14px;line-height: 17px;">
+                Web Printer Helper
+            </p>
+            <br>
+            <div class="footer">
+                Copyright &copy; 2020 <a target="_blank" href="https://fb.com/abydzakiyyah">Abu Dzakiyyah</a>. All rights reserved.
+            </div>
+        </div>
+    </div>
+    <div id="tab2" class="tabcontent animated fadeIn">
+        <div class="viewApi animated fadeIn">
+            <div class="box-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="text-left">Server Name</th>
+                        <th class="text-left">Server IP</th>
+                        <th class="text-center">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody class="apiList"></tbody>
+                </table>
+            </div>
+            <div class="box-footer">
+                <table style="width: 100%;">
+<!--                    <tr>-->
+<!--                        <td colspan="2">-->
+<!--                            <div class="pretty p-round p-jelly">-->
+<!--                                <input type="checkbox" name="showPopup" id="showPopup"/>-->
+<!--                                <div class="state p-success">-->
+<!--                                    <label>Show Popup Switch (If More Api's)</label>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+                    <tr>
+                        <td><input id="delApiKey" type="button" class="bt bt-error " value="Delete"></td>
+                        <td><input id="addApiKey" type="button" class="bt bt-success" value="Add Api Key"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="addApi animated fadeIn" style="display: none">
+            <div class="box-body">
+                <form id="frmAddApi">
+                    <div class="col-100">
+                        <span>Api Key:</span>
+                        <textarea name="apiKey" id="apiKey" rows="3" placeholder="Api Key"></textarea>
+                    </div>
+                    <div class="col-100">
+                        <span>WebApp Url (Root):</span>
+                        <input type="text" id="webAppUrl" name="webAppUrl" placeholder="Web App Url (Root/Sub Domain With Protocol)">
+                    </div>
+                    <div class="col-100">
+                        <span>Server Url (Optional):</span>
+                        <input type="text" id="serverUrl" name="serverUrl" placeholder="Server Url">
+                    </div>
+                    <div class="col-75">
+                        <span>Server IP:</span>
+                        <input style="width: 98%;" type="text" id="serverIP" name="serverIP" placeholder="Server IP" disabled>
+                    </div>
+                    <div class="col-25">
+                        <span>Port:</span>
+                        <input type="text" id="serverPort" name="serverPort" placeholder="Port" disabled>
+                    </div>
+                </form>
+            </div>
+            <div class="box-footer">
+                <table style="width: 100%;">
+                    <tr>
+                        <td><input id="checkButton" type="button" class="bt bt-success " value="Check"></td>
+                        <td><input id="saveButton" type="button"  class="bt bt-primary" value="Save Preferences"></td>
+                        <td><input id="backList" type="button" class="bt bt-error" value="Back"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.toast.js"></script>
+<script src="assets/js/selectize.min.js"></script>
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/general.js"></script>
+<script src="assets/js/popup.js"></script>
+</body>
+</html>

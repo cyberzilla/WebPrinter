@@ -1,0 +1,276 @@
+/* Fonts */
+@font-face{
+    font-family: 'Open Sans';
+    src:url( '../fonts/opensans-light.woff2' ) format( 'woff2' ),
+    url( '../fonts/opensans-light.ttf' ) format( 'truetype' );
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    src:url( '../fonts/opensans-regular.woff2' ) format( 'woff2' ),
+    url( '../fonts/opensans-regular.ttf' ) format( 'truetype' );
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    src:url( '../fonts/opensans-semibold.woff2' ) format( 'woff2' ),
+    url( '../fonts/opensans-semibold.ttf' ) format( 'truetype' );
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    src:url( '../fonts/opensans-bold.woff2' ) format( 'woff2' ),
+    url( '../fonts/opensans-bold.ttf' ) format( 'truetype' );
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url( '../fonts/opensans-extrabold.woff2' ) format( 'woff2' ),
+    url( '../fonts/opensans-extrabold.ttf' ) format( 'truetype' );
+    font-weight: 800;
+    font-style: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Common */
+body{
+    overflow: hidden;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #1c304e;
+    line-height: 1.4;
+}
+
+span{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.col-100{
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.col-25{
+    float: left;
+    width: 25%;
+    margin-top: 5px;
+}
+
+.col-50 {
+    float: left;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.col-75{
+    float: left;
+    width: 75%;
+    margin-top: 5px;
+}
+
+
+textarea{
+    resize: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+input[type=text], select,textarea {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.bt{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bt-success{background-color: #4CAF50;color: white;}
+.bt-success:hover{background-color: #45a049;}
+
+.bt-primary{background-color: #3c8dbc;color: white;}
+.bt-primary:hover{background-color: #3579a0}
+
+.bt-error{background-color: #d93636;color: white;}
+.bt-error:hover{background-color: #ad3c3c}
+
+button:disabled,
+button[disabled],
+.bt-disabled {
+    background-color: #b8b8b8 !important;
+    color: white !important;
+}
+
+.tabcontainer{
+    width: 400px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+	z-index: 1;
+}
+
+/* Style the buttons inside the tab */
+.tab a {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    font-size: 13px;
+    color: #a1a1a1;
+	z-index: 1;
+    border: 1px solid transparent;
+}
+
+/* Change background color of buttons on hover */
+.tab a:hover {
+    background-color: #e3e3e3;
+}
+
+/* Create an active/current tablink class */
+.tab a.active {
+    background-color: #fff;
+    color: #000000;
+    text-shadow: 1px 1px 1px #fcfcfc;
+	position: relative;
+    margin-bottom: -1px;
+    z-index: 1;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+/* Style the tab content */
+.tabcontent.active{
+    display: block;
+}
+.tabcontent {
+    display: none;
+    padding:6px 12px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    min-height: 363px;
+	margin-top: -1px;
+}
+
+.aboutContainer{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+.aboutContainer img {
+    padding-top: 40px;
+}
+
+.footer{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 80px;
+}
+
+/*Api Table*/
+.table {
+    font-family: 'Open Sans', Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 13px;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-italic{
+    font-style: italic;
+}
+
+.box-body{
+    height: 240px;
+}
+
+/*.box-footer{*/
+/*    padding: 3px 0 0;*/
+/*}*/
+
+/*Custom Notify*/
+.notifyjs-foo-base {
+    opacity: 0.85;
+    width: 200px;
+    background: #F5F5F5;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.notifyjs-foo-base .title {
+    width: 100px;
+    float: left;
+    margin: 10px 0 0 10px;
+    text-align: right;
+}
+
+.notifyjs-foo-base .buttons {
+    width: 70px;
+    float: right;
+    font-size: 9px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.notifyjs-foo-base button {
+    font-size: 9px;
+    padding: 5px;
+    margin: 2px;
+    width: 60px;
+}
+
+.jq-toast-single a{
+    border-bottom: 0 !important;
+}

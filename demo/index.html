@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>WebPrinter Demonstration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        small{
+            font-style: italic;
+            font-size: small;
+            font-family: Consolas,serif;
+            color: #999999;
+        }
+
+        .footer{
+            text-align: center;
+        }
+        legend {
+            font-family: arial, sans-serif;
+            font-weight: bold;
+            font-size: 90%;
+            color: #666;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-bottom-color: #999;
+            border-right-color: #999;
+            padding: 4px 8px;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+			box-sizing: border-box;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit],button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin-left: 5px;
+        }
+
+        input[type=submit]:hover,button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        .github-corner svg {
+            fill: gray;
+            color: #fff;
+        }
+
+        .github-corner:hover svg {
+            fill: #00c420;
+        }
+
+        @keyframes octocat-wave {
+            0%, 100% {
+                transform: rotate(0deg)
+            }
+            20%, 60% {
+                transform: rotate(-25deg)
+            }
+            40%, 80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width: 500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+</head>
+<body>
+<a href="https://github.com/cyberzilla/WebPrinter" class="github-corner">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0;">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="white" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="white" class="octo-body"></path>
+    </svg>
+</a>
+<h2>WebPrinter</h2>
+<p>WebPrinter is a tool that can help you to print documents directly from your web apps. <a href="https://apps.anakmuda.co.id/webprinter/WebPrinterSetup.zip">Download Here</a>
+</p>
+
+<div class="container">
+    <fieldset>
+        <legend>Options</legend>
+        <form id="ddescannerform">            
+            <div class="row">
+                <div class="col-25">
+                    <label for="printerName">Printer Name</label>
+                </div>
+                <div class="col-75">
+					<input type="text" id="printerName" name="printerName" tabindex="1" placeholder="Input printer name" value="Epson L3150">					                
+                    <small>You can check printer list by sending "printerlist" command</small>
+                </div>
+            </div>
+			<div class="row">
+                <div class="col-25">
+                    <label for="fileName">File Name</label>
+                </div>
+                <div class="col-75">
+					<input type="text" id="fileName" name="fileName" tabindex="1" placeholder="Input file name (Exp: Document.pdf)" value="WebPrinterTest.pdf">					                
+                    <small>Only Filename without link</small>
+                </div>
+            </div>
+			<div class="row">
+                <div class="col-25">
+                    <label for="fileLink">File Link</label>
+                </div>
+                <div class="col-75">
+					<input type="text" id="fileLink" name="fileLink" tabindex="1" placeholder="Input file name with link (Exp: https://www.example.com/Document.pdf)" value="https://apps.anakmuda.co.id/webprinter/WebPrinterTest.pdf">					                
+                    <small>Filename with link</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="paperSize">Paper Size</label>
+                </div>
+                <div class="col-75">
+                    <select name="paperSize" id="paperSize" tabindex="3">      
+						<option value="letter">Letter</option>
+                        <option value="legal">Legal</option>
+                        <option value="A4">A4</option>   
+						<option value="A3">A3</option>  
+						<option value="match" selected>Match</option>
+						<option value="custom">Custom</option>
+                    </select>
+                    <input type="text" id="customPaperSize" name="customPaperSize" tabindex="1" placeholder="Input Custom Papersize (exp: 10x10 in cm)" style="display:none;">
+                    <small>Letter,Legal,A4,A3,match or you can use Custom in (cmxcm)</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="copies">Copies</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="copies" name="copies" tabindex="4" value="1" placeholder="Input Print Copies">
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-25">
+                <label for="generatedcode">Generated Code</label>
+            </div>
+            <div class="col-75">
+                <textarea id="generatedcode" name="generatedcode" placeholder="Generated Code" style="height:130px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+		
+            <button type="button" value="button" onclick="generate();">Generate Code</button>            
+			<button type="button" id="testWebPrinter" style="float:left;">Print Test Here!</button> 
+			<button class="button" data-command="licensestatus">License Status</button>
+				<button class="button" data-command="serverinfo">Server Info</button>
+				<button class="button" data-command="clearjobs:PrinterNameHere">Clear Printer Jobs</button>
+				<button class="button" data-command="author">Author</button>
+				<button class="button" data-command="printerlist">PrinterList</button>				
+        </div>
+    </fieldset>
+</div>
+<div class="footer">
+    Copyright &copy;  <a href="https://abu.dzakiyyah.com/" target="_blank">CV Anakmuda Development</a> 2020
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script>
+	function generate(){
+		var x = document.getElementById("ddescannerform"),
+            txt2 = "",
+            code = "",
+			base64,
+            rawstring="",
+            papers= $("#paperSize").val();
+
+        papers = papers==="custom"?$("#customPaperSize").val():papers;
+        rawstring = $("#printerName").val()+"|"+$("#fileName").val()+"|"+$("#fileLink").val()+"|"+papers+"|"+$("#copies").val();
+		base64 = btoa(rawstring);
+        $("#testWebPrinter").attr("data-base64",base64);
+		code = "window.postMessage({\"webPrinter\": \"print\", \"base64\":\""+base64+"\"});";
+        txt2 = "Printer Param (Dont Forget to Encode Base64):\n"+ rawstring + "\n\nCall With Javascript in Web Apps:\n" + code;
+        $("#generatedcode").html(txt2);
+	}
+
+    $(function(){
+        $("#paperSize").click(function(){
+            if($(this).val()==="custom"){
+                $("#customPaperSize").show();
+            }else{
+                $("#customPaperSize").hide();
+            }
+        });
+
+		$("#testWebPrinter").click(function(){
+			var base64 = $(this).attr("data-base64");
+			if (base64 !== "" && base64 !== undefined){
+				window.postMessage({"webPrinter": "print", "base64":base64});
+			}else{
+				alert('Please Generate Code First');
+			}
+		});
+	
+        $(".button").click(function(){
+            if ($(this).data("base64")!==undefined){
+                window.postMessage({"webPrinter": $(this).data("command"), base64:$(this).data("base64")});
+            }else{
+                window.postMessage({"webPrinter": $(this).data("command")});
+				$("#generatedcode").html("Call With Javascript in Web Apps:\nwindow.postMessage({\"webPrinter\": \""+$(this).data("command")+"\"});");
+                $("#testWebPrinter").attr("data-base64","");
+            }
+        });
+    });
+</script>
+
+
+</body></html>
